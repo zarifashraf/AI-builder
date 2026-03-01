@@ -1,5 +1,3 @@
-version: "3.9"
-
 services:
   api:
     build:
@@ -11,7 +9,7 @@ services:
       FINMAXXIN_MONTE_CARLO_PATHS: 600
       FINMAXXIN_MONTE_CARLO_SEED: 42
     ports:
-      - "8000:8000"
+      - "127.0.0.1:8000:8000"
     depends_on:
       - postgres
       - redis
@@ -24,7 +22,7 @@ services:
     environment:
       NEXT_PUBLIC_API_BASE: http://localhost:8000
     ports:
-      - "3000:3000"
+      - "127.0.0.1:3000:3000"
     depends_on:
       - api
 
@@ -36,15 +34,19 @@ services:
       POSTGRES_PASSWORD: finmaxxin
       POSTGRES_DB: finmaxxin
     ports:
-      - "5432:5432"
+      - "127.0.0.1:5432:5432"
     volumes:
       - pgdata:/var/lib/postgresql/data
 
   redis:
     image: redis:7-alpine
     container_name: finmaxxin-redis
-    ports:
-      - "6379:6379"
+    command:
+      - redis-server
+      - --protected-mode
+      - "yes"
+      - --requirepass
+      - ${REDIS_PASSWORD:-finmaxxin-redis-dev-pass}
 
   redpanda:
     image: redpandadata/redpanda:v24.2.11
@@ -67,7 +69,7 @@ services:
       - --advertise-kafka-addr
       - PLAINTEXT://redpanda:9092
     ports:
-      - "9092:9092"
+      - "127.0.0.1:9092:9092"
 
 volumes:
   pgdata:
