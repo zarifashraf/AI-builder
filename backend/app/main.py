@@ -4,7 +4,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 from app.api.deps import ServiceContainer
-from app.api.routes import router as yousim_router
+from app.api.routes import router as finmaxxin_router
 from app.config import settings
 from app.services.data_provider import AccountDataProvider
 from app.services.events import EventBus
@@ -43,7 +43,7 @@ def create_app() -> FastAPI:
         event_bus=EventBus(store),
     )
     app.state.services = services
-    app.include_router(yousim_router)
+    app.include_router(finmaxxin_router)
 
     @app.get("/healthz")
     def healthz() -> dict[str, str]:

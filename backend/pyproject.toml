@@ -1,7 +1,7 @@
 [project]
-name = "yousim-api"
+name = "finmaxxin-api"
 version = "0.1.0"
-description = "YouSim V1 FastAPI backend prototype"
+description = "Finmaxxin V1 FastAPI backend prototype"
 readme = "README.md"
 requires-python = ">=3.11"
 dependencies = [

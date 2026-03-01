@@ -14,7 +14,7 @@ from app.models.contracts import (
     SimulationResult,
 )
 
-router = APIRouter(prefix="/v1", tags=["yousim"])
+router = APIRouter(prefix="/v1", tags=["finmaxxin"])
 
 
 @router.post("/scenarios", response_model=ScenarioCreateResponse, status_code=status.HTTP_201_CREATED)

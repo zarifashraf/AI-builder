@@ -1,6 +1,6 @@
-# YouSim V1 Prototype
+# Finmaxxin V1 Prototype
 
-YouSim is a production-oriented prototype of a personal financial digital twin.  
+Finmaxxin is a production-oriented prototype of a personal financial digital twin.  
 It models major life decisions over a 0-5 year horizon, ranks conservative recommendations with transparent rationale, and supports explicit one-click execution flow with idempotency and decision traces.
 
 ## What is implemented
@@ -53,7 +53,7 @@ docker compose up --build
 ### 2. Demo auth
 
 Use:
-- `Authorization: Bearer yousim-demo-token`
+- `Authorization: Bearer finmaxxin-demo-token`
 - `X-User-Id: user-123`
 
 The web UI is prefilled with this token.

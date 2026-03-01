@@ -1,1 +1,1 @@
-"""YouSim backend package."""
+"""Finmaxxin backend package."""

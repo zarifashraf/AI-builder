@@ -5,7 +5,7 @@ from app.main import create_app
 
 def headers(user_id: str = "user-123") -> dict[str, str]:
     return {
-        "Authorization": "Bearer yousim-demo-token",
+        "Authorization": "Bearer finmaxxin-demo-token",
         "X-User-Id": user_id,
     }
 

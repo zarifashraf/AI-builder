@@ -34,7 +34,7 @@ function cad(cents: number) {
 }
 
 export default function Page() {
-  const [token, setToken] = useState("yousim-demo-token");
+  const [token, setToken] = useState("finmaxxin-demo-token");
   const [userId, setUserId] = useState("user-123");
   const [horizon, setHorizon] = useState(36);
   const [incomeChange, setIncomeChange] = useState(5);
@@ -179,7 +179,7 @@ export default function Page() {
 
   return (
     <main className="shell">
-      <h1 className="headline">YouSim: Personal Financial Digital Twin</h1>
+      <h1 className="headline">Finmaxxin: Personal Financial Digital Twin</h1>
       <p className="sub">Model major life decisions across 0-5 years, then safely execute recommended actions.</p>
 
       <div className="grid">

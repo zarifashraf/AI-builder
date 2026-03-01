@@ -4,12 +4,12 @@ services:
   api:
     build:
       context: ./backend
-    container_name: yousim-api
+    container_name: finmaxxin-api
     environment:
-      YOUSIM_ENVIRONMENT: dev
-      YOUSIM_REQUIRED_BEARER_TOKEN: yousim-demo-token
-      YOUSIM_MONTE_CARLO_PATHS: 600
-      YOUSIM_MONTE_CARLO_SEED: 42
+      FINMAXXIN_ENVIRONMENT: dev
+      FINMAXXIN_REQUIRED_BEARER_TOKEN: finmaxxin-demo-token
+      FINMAXXIN_MONTE_CARLO_PATHS: 600
+      FINMAXXIN_MONTE_CARLO_SEED: 42
     ports:
       - "8000:8000"
     depends_on:
@@ -20,7 +20,7 @@ services:
   web:
     build:
       context: ./frontend
-    container_name: yousim-web
+    container_name: finmaxxin-web
     environment:
       NEXT_PUBLIC_API_BASE: http://localhost:8000
     ports:
@@ -30,11 +30,11 @@ services:
 
   postgres:
     image: postgres:16-alpine
-    container_name: yousim-postgres
+    container_name: finmaxxin-postgres
     environment:
-      POSTGRES_USER: yousim
-      POSTGRES_PASSWORD: yousim
-      POSTGRES_DB: yousim
+      POSTGRES_USER: finmaxxin
+      POSTGRES_PASSWORD: finmaxxin
+      POSTGRES_DB: finmaxxin
     ports:
       - "5432:5432"
     volumes:
@@ -42,13 +42,13 @@ services:
 
   redis:
     image: redis:7-alpine
-    container_name: yousim-redis
+    container_name: finmaxxin-redis
     ports:
       - "6379:6379"
 
   redpanda:
     image: redpandadata/redpanda:v24.2.11
-    container_name: yousim-redpanda
+    container_name: finmaxxin-redpanda
     command:
       - redpanda
       - start
