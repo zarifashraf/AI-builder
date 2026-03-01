@@ -66,6 +66,27 @@ pip install -e ".[dev]"
 pytest -q
 ```
 
+## Run locally without Docker
+
+### Backend (Terminal 1)
+
+```bash
+cd backend
+pip install -e ".[dev]"
+python -m uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
+```
+
+### Frontend (Terminal 2)
+
+```bash
+cd frontend
+npm install
+npm run dev
+```
+
+- Web app: `http://localhost:3000`
+- API docs: `http://localhost:8000/docs`
+
 ## API contract notes
 
 - Currency is fixed to `CAD` in V1.
