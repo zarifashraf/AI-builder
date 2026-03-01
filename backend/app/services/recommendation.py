@@ -87,7 +87,10 @@ class RecommendationService:
                     expected_net_worth_delta=Money(amount_cents=expected_delta),
                     downside_p10_delta=Money(amount_cents=downside_delta),
                     goal_success_probability=success_prob,
-                    confidence=min(0.98, max(0.3, simulation.confidence - candidate["friction_penalty"])),
+                    confidence=min(
+                        0.98,
+                        max(0.15, simulation.confidence * (1.0 - (candidate["friction_penalty"] * 0.35))),
+                    ),
                     rationale=candidate["rationale"],
                     key_assumptions=self._key_assumptions(scenario_input),
                     sensitivity_top_factors=candidate["sensitivity"],

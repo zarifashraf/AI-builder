@@ -35,10 +35,13 @@ class SimulationService:
         deltas = scenario_final - baseline_final
 
         p10_delta = int(np.percentile(deltas, 10))
-        mean_delta = float(np.mean(deltas))
-        dispersion = float(np.std(deltas))
-        denom = max(abs(mean_delta), 1.0)
-        confidence = max(0.25, min(0.98, 1.0 / (1.0 + (dispersion / denom))))
+        median_delta = float(np.percentile(deltas, 50))
+        probability_improves = float(np.mean(deltas > 0))
+        directional_strength = abs(probability_improves - 0.5) * 2.0
+        interquartile_spread = float(np.percentile(deltas, 75) - np.percentile(deltas, 25))
+        signal_to_noise = abs(median_delta) / max(interquartile_spread, 1.0)
+        stability = signal_to_noise / (1.0 + signal_to_noise)
+        confidence = max(0.15, min(0.98, 0.2 + (0.55 * directional_strength) + (0.25 * stability)))
         initial_net_worth = snapshot.assets_cents - snapshot.liabilities_cents
         goal_success_probability = float(np.mean(scenario_final >= initial_net_worth))
 
