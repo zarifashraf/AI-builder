@@ -117,3 +117,8 @@ npm run dev
 - Add queue workers for heavy simulation jobs.
 - Add mTLS/service identity, KMS encryption, vault-managed secrets, and WAF.
 - Add model registry, drift monitoring, and rollout gates.
+
+## Iterations
+### Iteration-1
+<img width="1288" height="705" alt="image" src="https://github.com/user-attachments/assets/0d325f48-ab3d-44dc-af33-ebe2666250b5" />
+
