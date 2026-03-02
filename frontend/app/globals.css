@@ -1,12 +1,12 @@
 :root {
-  --bg-top: #f0f4ff;
-  --bg-bottom: #f6fff8;
-  --ink: #102029;
-  --ink-soft: #355162;
-  --accent: #0f9d70;
-  --accent-2: #0069d0;
-  --card: rgba(255, 255, 255, 0.9);
-  --line: rgba(16, 32, 41, 0.12);
+  --bg-top: #ffffff;
+  --bg-bottom: #f2f2f0;
+  --ink: #141414;
+  --ink-soft: #5f5f5f;
+  --accent: #d4b25a;
+  --accent-2: #a07a2f;
+  --card: rgba(255, 255, 255, 0.95);
+  --line: rgba(20, 20, 20, 0.14);
 }
 
 * {
@@ -62,7 +62,7 @@ body {
   border-radius: 16px;
   padding: 16px;
   backdrop-filter: blur(6px);
-  box-shadow: 0 8px 24px rgba(10, 38, 51, 0.08);
+  box-shadow: 0 8px 24px rgba(20, 20, 20, 0.08);
 }
 
 .panel h2 {
@@ -99,7 +99,7 @@ textarea {
 button {
   cursor: pointer;
   border: none;
-  color: white;
+  color: #141414;
   background: linear-gradient(130deg, var(--accent-2), var(--accent));
   font-weight: 600;
   transition: transform 0.1s ease;
@@ -175,7 +175,7 @@ button:disabled {
   height: 18px;
   border-radius: 999px;
   border: 1px solid var(--line);
-  background: #f1f6fb;
+  background: #f6f0df;
   color: var(--ink-soft);
   font-size: 0.72rem;
   line-height: 1;
@@ -192,11 +192,11 @@ button:disabled {
   max-width: 320px;
   padding: 8px 10px;
   border-radius: 8px;
-  background: #0f1a22;
-  color: #d6ecff;
+  background: #141414;
+  color: #f1f1f1;
   font-size: 0.76rem;
   line-height: 1.35;
-  box-shadow: 0 10px 22px rgba(5, 18, 25, 0.28);
+  box-shadow: 0 10px 22px rgba(20, 20, 20, 0.3);
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
@@ -212,7 +212,7 @@ button:disabled {
   transform: translateX(-50%);
   border-width: 6px;
   border-style: solid;
-  border-color: #0f1a22 transparent transparent transparent;
+  border-color: #141414 transparent transparent transparent;
 }
 
 .metric-hint:hover .metric-tooltip,
@@ -224,8 +224,8 @@ button:disabled {
 .pill {
   display: inline-block;
   font-size: 0.74rem;
-  background: #ebf6ff;
-  color: #0b4b8c;
+  background: #f3ecd9;
+  color: #6f5420;
   padding: 3px 8px;
   border-radius: 999px;
 }
@@ -233,8 +233,8 @@ button:disabled {
 .trace {
   white-space: pre-wrap;
   font-size: 0.8rem;
-  background: #0f1a22;
-  color: #cae7ff;
+  background: #171717;
+  color: #f0f0f0;
   border-radius: 10px;
   padding: 12px;
   max-height: 220px;
